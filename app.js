@@ -88,7 +88,7 @@ function renderEpisodePlayer(details, slug) {
   showSection("player");
   const section = $("#detail-section");
   section.innerHTML = `<button class="detail-back" id="player-back">← Kembali ke anime</button>
-    <div class="player-heading"><div class="eyebrow">SEDANG DIPUTAR</div><h2>${esc(details.title || "Episode anime")}</h2><p class="detail-synopsis">${esc(details.seriesName || "Oploverz")}</p></div>
+    <div class="player-heading"><div class="eyebrow">SEDANG DIPUTAR</div><h2>${esc(details.title || "Episode anime")}</h2><p class="detail-synopsis">${esc(details.seriesName || "AniFams")}</p></div>
     ${validUrl ? `<div class="video-frame-wrap"><iframe class="video-frame" src="${esc(playerUrl)}" title="${esc(details.title || "Pemutar anime")}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>` : `<div class="empty-state"><strong>Sumber player belum tersedia</strong>API tidak mengembalikan streamingUrl yang valid untuk episode ini.</div>`}
     <div class="player-controls">${prevSlug ? `<button class="button button-ghost" id="prev-episode">← Episode sebelumnya</button>` : `<button class="button button-ghost" disabled>← Episode sebelumnya</button>`}<span class="detail-chip">Episode ${esc(details.episodeNumber || "—")}</span>${nextSlug ? `<button class="button button-primary" id="next-episode">Episode berikutnya →</button>` : `<button class="button button-primary" disabled>Episode berikutnya →</button>`}</div>
     <p class="detail-synopsis">Jika player tidak tampil, penyedia embed mungkin membatasi pemutaran dari situs lain.</p>`;
