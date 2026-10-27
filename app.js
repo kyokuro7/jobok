@@ -1,4 +1,4 @@
-const API = "https://api.rexxgraph.my.id";
+const API = "/api";
 const $ = (s) => document.querySelector(s);
 const state = { view: "home", page: 1, query: "", type: "", scheduleDay: "Senin", schedule: {}, lastItems: [], loading: false };
 const DAYS = ["Senin","Selasa","Rabu","Kamis","Jumat","Sabtu","Minggu"];
