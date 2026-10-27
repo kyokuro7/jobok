@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0b12" />
+  <meta name="description" content="Jelajahi anime ongoing, terbaru, jadwal tayang, dan detail anime." />
+  <title>MiraNime — Anime Discovery</title>
+  <link rel="preconnect" href="https://api.rexxgraph.my.id" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="MiraNime beranda"><span class="brand-mark">M</span><span>Mira<span class="brand-accent">Nime</span></span></a>
+    <nav class="main-nav" aria-label="Navigasi utama">
+      <button class="nav-link active" data-view="home">Beranda</button>
+      <button class="nav-link" data-view="ongoing">Sedang Tayang</button>
+      <button class="nav-link" data-view="upcoming">Segera Tayang</button>
+      <button class="nav-link" data-view="schedule">Jadwal</button>
+      <button class="nav-link" data-view="all">Semua Anime</button>
+    </nav>
+    <form class="search-form" id="search-form" role="search">
+      <span class="search-icon">⌕</span>
+      <input id="search-input" type="search" placeholder="Cari anime..." aria-label="Cari anime" autocomplete="off" />
+      <button type="submit" aria-label="Cari">↵</button>
+    </form>
+    <button class="mobile-menu" id="mobile-menu" aria-label="Buka navigasi">☰</button>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> TEMUKAN DUNIA ANIME</div>
+        <h1>Petualangan baru<br/><span>dimulai di sini.</span></h1>
+        <p>Jelajahi anime yang sedang tayang, cari judul favoritmu, dan cek jadwal episode terbaru dalam satu tempat.</p>
+        <div class="hero-actions">
+          <button class="button button-primary" data-view="ongoing">Jelajahi Anime <span>↗</span></button>
+          <button class="button button-ghost" data-view="schedule"><span>▦</span> Lihat Jadwal</button>
+        </div>
+        <div class="hero-note"><span class="pulse"></span> DATA ANIME DIPERBARUI DARI API</div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="art-star star-a">✦</div><div class="art-star star-b">✧</div>
+        <div class="art-card art-card-back"><div class="art-silhouette"></div></div>
+        <div class="art-card art-card-front"><div class="art-sun"></div><div class="art-mountain"></div><div class="art-mountain mountain-two"></div><div class="art-spark">✦</div><div class="art-label">YOUR NEXT<br/>FAVORITE</div></div>
+        <div class="floating-tag tag-top">DISCOVER <b>✦</b></div><div class="floating-tag tag-bottom"><span class="tag-dot"></span> ANIME UNIVERSE</div>
+      </div>
+    </section>
+
+    <section class="quick-stats" aria-label="Kategori cepat">
+      <button class="stat-chip" data-view="ongoing"><span class="chip-icon">◉</span><span><b>Ongoing</b><small>Anime berjalan</small></span><span class="chip-arrow">↗</span></button>
+      <button class="stat-chip" data-view="upcoming"><span class="chip-icon">✧</span><span><b>Upcoming</b><small>Segera hadir</small></span><span class="chip-arrow">↗</span></button>
+      <button class="stat-chip" data-view="schedule"><span class="chip-icon">▦</span><span><b>Jadwal</b><small>Hari penayangan</small></span><span class="chip-arrow">↗</span></button>
+      <button class="stat-chip" data-view="all"><span class="chip-icon">▤</span><span><b>Semua Anime</b><small>Jelajahi katalog</small></span><span class="chip-arrow">↗</span></button>
+    </section>
+
+    <section id="content" class="content-section">
+      <div class="section-heading">
+        <div><div class="eyebrow" id="section-kicker">PILIHAN UNTUKMU</div><h2 id="section-title">Anime yang sedang tayang <span class="heading-spark">✦</span></h2><p id="section-subtitle">Ikuti cerita yang sedang berlanjut minggu ini.</p></div>
+        <div class="section-tools"><label class="filter-label" for="type-filter">Tipe</label><select id="type-filter"><option value="">Semua tipe</option><option value="TV">TV</option><option value="Movie">Movie</option><option value="OVA">OVA</option><option value="ONA">ONA</option><option value="Special">Special</option></select><button id="refresh-btn" class="icon-button" title="Muat ulang" aria-label="Muat ulang">↻</button></div>
+      </div>
+      <div id="status" class="status-line" role="status">Menghubungkan ke API...</div>
+      <div id="anime-grid" class="anime-grid"></div>
+      <div id="pagination" class="pagination"></div>
+    </section>
+
+    <section id="schedule-section" class="schedule-section hidden">
+      <div class="section-heading"><div><div class="eyebrow">JANGAN LEWATKAN</div><h2>Jadwal tayang <span class="heading-spark">✦</span></h2><p>Pilih hari untuk melihat anime yang dijadwalkan.</p></div></div>
+      <div id="day-tabs" class="day-tabs"></div><div id="schedule-list" class="schedule-list"></div>
+    </section>
+
+    <section id="detail-section" class="detail-section hidden"></section>
+  </main>
+
+  <footer class="footer"><a class="brand footer-brand" href="#"><span class="brand-mark">M</span><span>Mira<span class="brand-accent">Nime</span></span></a><p>Jelajahi anime favoritmu, satu episode dalam satu waktu.</p><div class="footer-meta"><span>DATA METADATA: MIRAINIME API</span><span>BUKAN HOST VIDEO</span></div></footer>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
